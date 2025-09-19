@@ -51,6 +51,14 @@ class _CustomTextFieldState extends State<CustomTextField> {
               borderRadius: BorderRadius.circular(16),
               borderSide: const BorderSide(color: Color(0xff009639)),
             ),
+            errorBorder:OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16),
+              borderSide: const BorderSide(color: Color(0xFFD5392E)),
+              ) ,
+            focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16),
+              borderSide: const BorderSide(color: Color(0xFFD5392E)),
+            ),
             hintText: widget.hintText,
             hintStyle: Theme.of(context).textTheme.bodySmall,
             filled: true,
