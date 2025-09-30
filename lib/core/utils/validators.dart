@@ -1,25 +1,30 @@
-class AppValidators {
-  static String? emailValidator(String? value) {
-    final checkEmpty=notEmptyValidator(value,'Please enter your email');
-    if (checkEmpty!=null)return checkEmpty;
-    if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}$').hasMatch(value!)) {
-      return 'Enter a valid email';
+import 'package:krakebic/core/constants/app_strings.dart';
+
+extension AppValidators on String? {
+  String? validateEmail() {
+    if (this == null || this!.isEmpty) {
+      return AppStrings.emailEmpty;
+    }
+    if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}$').hasMatch(this!)) {
+      return AppStrings.emailInvalid;
     }
     return null;
   }
 
-  static String? passwordValidator(String? value) {
-    final checkEmpty=notEmptyValidator(value,'Please enter your password');
-    if (checkEmpty!=null)return checkEmpty;
-    if (value!.length < 8) {
-      return 'Password must be at least 8 characters';
+  String? validatePassword() {
+    if (this == null || this!.isEmpty) {
+      return AppStrings.passwordEmpty;
     }
-  return null;
+    if (this!.length < 8) {
+      return AppStrings.passwordTooShort;
+    }
+    return null;
   }
-   static String? notEmptyValidator(String? value, String massage){
-     if (value == null || value.isEmpty) {
-      return massage;
-     }
-     return null;
-   }
+
+  String? notEmptyValidator(String message) {
+    if (this == null || this!.isEmpty) {
+      return message;
+    }
+    return null;
+  }
 }

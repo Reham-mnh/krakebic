@@ -91,4 +91,9 @@ class AppStrings {
   static const dateOfBirth = "Date of Birth";
   static const save = "save";
 
+  static const String emailEmpty = 'Please enter your email';
+  static const String emailInvalid = 'Enter a valid email';
+  static const String passwordEmpty = 'Please enter your password';
+  static const String passwordTooShort = 'Password must be at least 8 characters';
+
 }

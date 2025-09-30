@@ -35,9 +35,9 @@ class _OnboardScreenState extends State<OnboardScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CustomIndcator(active: index == 0),
-                CustomIndcator(active: index == 1),
-                CustomIndcator(active: index == 2),
+                CustomIndicator(active: index == 0),
+                CustomIndicator(active: index == 1),
+                CustomIndicator(active: index == 2),
               ],
             ),
             SizedBox(height: 40),

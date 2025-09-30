@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:krakebic/core/constants/app_assets.dart';
 import 'package:krakebic/core/constants/app_strings.dart';
 import 'package:krakebic/core/constants/app_values.dart';
@@ -35,7 +34,7 @@ class LoginScreen extends StatelessWidget {
                     lable: AppStrings.email,
                     hintText: AppStrings.emailHint,
                     controller: emailControlller,
-                    validator: AppValidators.emailValidator,
+                    validator:(value) => value.validateEmail(),
                   ),
                   SizedBox(height: 16),
 
@@ -43,7 +42,7 @@ class LoginScreen extends StatelessWidget {
                     lable: AppStrings.password,
                     hintText: AppStrings.passwordHint,
                     isPassword: true,
-                    validator: AppValidators.passwordValidator,
+                    validator: (value) => value.validatePassword(),
                   ),
                   SizedBox(height: 61.h),
                   SizedBox(

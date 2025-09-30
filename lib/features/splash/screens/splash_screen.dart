@@ -42,8 +42,8 @@ class _SplashScreenState extends State<SplashScreen>
       begin: 0,
       end: 1,
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
-   
-      _controller.forward();
+
+    _controller.forward();
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
@@ -83,13 +83,16 @@ class _SplashScreenState extends State<SplashScreen>
                 child: Image.asset(AppAssets.splash),
               ),
 
-              Text(AppStrings.appName, style: Theme.of(context).textTheme.titleMedium),
-              SizedBox(height:AppValues.splashSpacing),
+              Text(
+                AppStrings.appName,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              SizedBox(height: AppValues.splashSpacing),
               Text(
                 AppStrings.splashSubtitle,
-                style: Theme.of(
-                  context,
-                ).textTheme.titleMedium!.copyWith(fontSize:AppValues.subtitleFontSize),
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  fontSize: AppValues.subtitleFontSize,
+                ),
               ),
             ],
           ),

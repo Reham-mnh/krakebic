@@ -10,7 +10,7 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomOnboardingScreen(
-      imagePath: 'assets/images/illustation.png',
+      imagePath: AppAssets.firstOnboard,
       text: AppStrings.onboarding1Text,
     );
   }
